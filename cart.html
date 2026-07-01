@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800">
+
+    <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+        <a href="products.html">
+            <img src="./imgs/logo.png" alt="Logo" class="h-20">
+        </a>
+
+        <div class="ml-auto flex items-center space-x-4">
+            <span id="usernamedisplay" class="text-gray-700 font-medium"></span>
+
+            <div class="relative">
+                <a href="#" role="button" id="cartdropdown" class="text-gray-700 hover:text-blue-600 text-xl flex items-center gap-1">
+                    <i class="fas fa-shopping-cart transition-colors duration-200"></i>
+                    <span id="cartcount" class="text-sm font-bold">0</span>
+                </a>
+
+                <div class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg invisible z-50">
+                    <div id="cartdropdownitems"></div>
+                    <div class="border-t border-gray-200 my-2"></div>
+                    <a href="cart.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-b-lg">
+                        View All Products
+                    </a>
+                </div>
+            </div>
+
+            <button onclick="logout()" class="px-4 py-2 border border-red-500 text-red-500 rounded-md hover:bg-red-500 hover:text-white transition duration-200">
+                Logout
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto mt-10 px-4 space-y-10">
+
+        <div>
+            <div id="cart-items" class="flex flex-wrap items-center"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-6 px-4">
+            <h3 class="text-center text-2xl font-semibold">
+                Total Price: $
+                <span id="totalPrice">0</span>
+            </h3>
+        </div>
+
+        <hr class="border-gray-200">
+
+        <div class="space-y-6 pb-12">
+            <h3 class="relative text-center text-2xl font-semibold pb-2.5 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-[20%] after:h-[2px] after:bg-red-600 after:transition-all after:duration-300 hover:after:w-[50%]">
+                Favorite Items
+            </h3>
+
+            <div id="favorite-items" class="flex overflow-x-auto p-3 gap-3.5"></div>
+        </div>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
